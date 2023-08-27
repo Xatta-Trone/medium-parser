@@ -26,10 +26,10 @@ app.get("/", async (req, res) => {
   let url = req.query.url;
   res.set("Content-Type", "text/html");
 
-  if (url == "" || url == undefined || url == null) {
-    res.send("<h1>Please pass a <strong>url</strong> in the query param </h1>");
-    return;
-  }
+  //   if (url == "" || url == undefined || url == null) {
+  //     res.send("<h1>Please pass a <strong>url</strong> in the query param </h1>");
+  //     return;
+  //   }
 
   try {
     const urlObject = new URL(url);
