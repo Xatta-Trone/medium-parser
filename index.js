@@ -28,6 +28,7 @@ app.get("/", async (req, res) => {
 
   if (url == "" || url == undefined || url == null) {
     res.send("<h1>Please pass a <strong>url</strong> in the query param </h1>");
+    return;
   }
 
   try {
