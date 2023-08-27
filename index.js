@@ -64,7 +64,7 @@ app.get("/", async (req, res) => {
     res.send(finalData);
     return;
   } catch (error) {
-    console.log(error.response.status);
+    // console.log(error.response?.status);
 
     res.send("<h1>Invalid URL or No Data found</h1>");
     return;
