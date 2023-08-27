@@ -26,6 +26,10 @@ app.get("/", async (req, res) => {
   let url = req.query.url;
   res.set("Content-Type", "text/html");
 
+  if (url == "" || url == undefined || url == null) {
+    res.send("<h1>Please pass a <strong>url</strong> in the query param </h1>");
+  }
+
   try {
     const urlObject = new URL(url);
 
@@ -64,6 +68,7 @@ app.get("/", async (req, res) => {
     res.send(finalData);
     return;
   } catch (error) {
+    console.log(error);
     // console.log(error.response?.status);
 
     res.send("<h1>Invalid URL or No Data found</h1>");
