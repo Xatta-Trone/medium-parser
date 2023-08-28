@@ -26,16 +26,16 @@ app.get("/", async (req, res) => {
   let url = req.query.url;
   res.set("Content-Type", "text/html");
 
-  //   if (url == "" || url == undefined || url == null) {
-  //     res.send("<h1>Please pass a <strong>url</strong> in the query param </h1>");
-  //     return;
-  //   }
+  if (url == "" || url == undefined) {
+    res.send("<h1>Please pass a <strong>url</strong> in the query param </h1>");
+    return;
+  }
 
   try {
     const urlObject = new URL(url);
 
     if (urlObject.hostname.toLowerCase().includes("medium.com") == false) {
-      res.send("Not a medium.com URL");
+      res.send("<h1>Not a medium.com URL</h1>");
       return;
     }
 
@@ -52,7 +52,7 @@ app.get("/", async (req, res) => {
     const preTagContent = document.getElementsByTagName("pre");
 
     if (preTagContent.length == 0) {
-      res.send("No data found.");
+      res.send("<h1>No data found.</h1>");
       return;
     }
 
