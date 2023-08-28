@@ -32,12 +32,12 @@ app.get("/", async (req, res) => {
   }
 
   try {
-    const urlObject = new URL(url);
+    // const urlObject = new URL(url);
 
-    if (urlObject.hostname.toLowerCase().includes("medium.com") == false) {
-      res.send("<h1>Not a medium.com URL</h1>");
-      return;
-    }
+    // if (urlObject.hostname.toLowerCase().includes("medium.com") == false) {
+    //   res.send("<h1>Not a medium.com URL</h1>");
+    //   return;
+    // }
 
     let finalData = "medium.com URL";
 
