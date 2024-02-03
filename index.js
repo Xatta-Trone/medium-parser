@@ -7,6 +7,7 @@ const port = 3000;
 const axios = require("axios");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
+const path = require("path");
 
 // const bodyParser = require("body-parser");
 
@@ -27,7 +28,7 @@ app.get("/", async (req, res) => {
   res.set("Content-Type", "text/html");
 
   if (url == "" || url == undefined) {
-    res.send("<h1>Please pass a <strong>url</strong> in the query param </h1>");
+    res.sendFile(path.join(__dirname, "/landing.html"));
     return;
   }
 
